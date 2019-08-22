@@ -1,0 +1,31 @@
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1160px;
+}
+
+
+form {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    fieldset {
+        display: flex;
+        padding-bottom: 50px;
+        justify-content: space-between;
+        border: none;
+
+        legend {
+            padding-bottom: 20px;
+        }
+        label {
+            padding-bottom: 15px;
+        }
+    }
+}
