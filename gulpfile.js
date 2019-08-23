@@ -8,6 +8,7 @@
 const { gulp, src, dest, series, parallel, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
+// comst pump = require('pump');
 const sass = require('gulp-sass');
 const del = require('del');
 
@@ -27,10 +28,16 @@ function startBrowserSync () {
 }
 
 function compileScss () {
-  return src('app/scss/index.scss')
+  return src('app/scss/index.scss', { allowEmpty: true })
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.css'))
     .pipe(dest('dist'));
+}
+
+function compileJs () {
+  return src('app/js/index.js', { allowEmpty: true })
+    .pipe(concat('main.js'))
+    .pipe(dest('dist'))
 }
 
 function watchFiles () {
@@ -40,6 +47,9 @@ function watchFiles () {
 
   watch('app/scss/**/*.scss').on('change', compileScss);
   watch('dist/main.css').on('change', browserSync.reload);
+
+  watch('app/js/**/*.js').on('change', compileJs);
+  watch('dist/main.js').on('change', browserSync.reload);
 }
 
-exports.watch = series(deleteDistFolder, compileScss, watchFiles);
+exports.watch = series(deleteDistFolder, parallel(compileScss, compileJs), watchFiles);
