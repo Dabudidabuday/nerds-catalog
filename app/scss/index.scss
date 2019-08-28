@@ -1,116 +1,22 @@
 @import 'normalize.scss';
 @import 'variables.scss';
+@import 'utilities.scss';
+
+@import 'header.scss';
+@import 'footer.scss';
 
 body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    margin: 0 auto;
-    width: 1160px;
-}
-
-.container--aside {
-    width: 260px;
-}
-
-.container--narrow {
-    width: 760px;
-    margin: 0;
-    margin-left: 140px;
-}
-
-.main-header {
-    background-color: #eeeeee;
-
-    > .container {
-        display: flex;
-        padding-top: 50px;
-        justify-content: space-between;
-
-
-        /*не работает стилизация состояний */
-        .main-header__logo {
-            margin-top: -15px;
-            color: #000000;
-        }
-
-        .logo__main:hover {
-            color: #303030;
-        }
-
-
-
-        .main-header__navigation {
-            width: 440px;
-
-            .navigation__link-list {
-                display: flex;
-                justify-content: space-between;
-                list-style: none;
-
-                .item__link {
-                    line-height: 30px;
-                    font-weight: 700;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    color: #000000;
-
-                }
-
-                .item__link:hover {
-                    color: #fb565a;
-                }
-
-                .item__link:active {
-                    color: #a6a6a6;
-                }
-
-
-            }
-        }
-
-        .shopping-cart {
-            position: relative;
-            align-self: center;
-            vertical-align: center;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #000000;
-
-            &::before {
-                position: absolute;
-                right: 100px;
-                display: inline-block;
-                content: url(../img/cart-icon.svg);
-                opacity: 0.5;
-
-
-            }
-                /* не работает стилизация состояний */
-        .shopping-cart:hover {
-            color: #fb565a;
-        }
-
-        }
-    }
-}
-
-h1 {
-    text-align: center;
-    margin: 0;
-    margin-top: 80px;
-    padding-bottom: 110px;
-    font-size: 55px;
-    line-height: 55px;
-
+.main {
+    display: flex;
+    justify-content: space-between;
 }
 
 .filters {
     display: inline-block;
-    margin-left: 210px;
 
     form {
         display: flex;
@@ -133,6 +39,7 @@ h1 {
                 font-weight: 700;
                 text-transform: uppercase;
             }
+
             label {
                 position: relative;
                 padding-bottom: 15px;
@@ -151,7 +58,6 @@ h1 {
 
 /* Range стоимости */
 .form-cost {
-
     input {
         background-color: #eeeeee;
         padding: 28px 18px;
@@ -185,6 +91,18 @@ input[type=checkbox] {
     position: absolute;
     -webkit-appearance: none;
     appearance: none;
+
+    &:checked {
+        & + .checkbox__img {
+            background-image: url(../img/checkbox-on.svg);
+        }
+    }
+
+    &:disabled {
+        & + .checkbox__img {
+            opacity: 0.1;
+        }
+    }
 }
 
 .checkbox__img {
@@ -194,14 +112,6 @@ input[type=checkbox] {
     height: 23px;
     opacity: 0.4;
     background-image: url(../img/checkbox-off.svg);
-}
-
-input[type=checkbox]:checked + .checkbox__img {
-    background-image: url(../img/checkbox-on.svg);
-}
-
-input[type=checkbox]:disabled + .checkbox__img {
-    opacity: 0.1;
 }
 
 input[type=submit] {
@@ -215,9 +125,6 @@ input[type=submit] {
 }
 
 .content {
-    display: inline-block;
-    margin-left: 140px;
-
     .content__sorting {
         display: flex;
         margin-top: 58px;
@@ -244,10 +151,8 @@ input[type=submit] {
     flex-wrap: wrap;
     list-style: none;
 
-    > .item {
-
+    & > .item {
         .item__link {
-
             img {
                 border-radius: 10px;
             }
