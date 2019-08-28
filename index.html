@@ -9,32 +9,34 @@
     <title>Магазин готовых шаблонов</title>
 </head>
 <body>
-    <header class="main-header container">
-        <a href="www.nerds.ru" class="main-header__logo"><img src="img/" alt="Логотип студии Нёрдс" class="logo-main"></a>
-        <nav class="main-header__navigation">
-            <ul class="navigation__link-list">
-                <li class="item">
-                    <a href="" class="item-link">студия</a>
-                </li>
+    <header class="main-header">
+        <div class="container">
+            <a href="www.nerds.ru" class="main-header__logo"><img src="../img/nerds-logo.svg" alt="Логотип студии Нёрдс" class="logo__main"></a>
+            <nav class="main-header__navigation">
+                <ul class="navigation__link-list">
+                    <li class="item">
+                        <a href="" class="item__link">студия</a>
+                    </li>
 
-                <li class="item">
-                    <a href="" class="item-link">клиенты</a>
-                </li>
+                    <li class="item">
+                        <a href="" class="item__link">клиенты</a>
+                    </li>
 
-                <li class="item">
-                    <a href="" class="item-link">магазин</a>
-                </li>
+                    <li class="item">
+                        <a href="" class="item__link">магазин</a>
+                    </li>
 
-                <li class="item">
-                    <a href="" class="item-link">контакты</a>
-                </li>
-            </ul>
+                    <li class="item">
+                        <a href="#" class="item__link">контакты</a>
+                    </li>
+                </ul>
+            </nav>
             <a href="" class="shopping-cart">корзина</a>
-        </nav>
-        <h1 class="main-title">Магазин готовых шаблонов</h1>
+        </div>
+        <h1 class="main-header__title">Магазин готовых шаблонов</h1>
     </header>
 
-    <section class="filters container">
+    <section class="filters container--aside">
         <form action="#" method="get" class="filters__form">
             <fieldset class="form__cost">
                 <legend class="cost__title">стоимость:</legend>
@@ -43,47 +45,54 @@
 
             <fieldset class="filters__grid">
                 <legend class="grid__title">cетка:</legend>
-
                 <label>
-                    <input type="radio" name="grid__input" value="Адаптивная">
+                    <input type="radio" name="grid__input" value="Адаптивная" class="grid__input">
+                    <span class="grid__button"></span>
                     Адаптивная
                 </label>
 
                 <label>
-                    <input type="radio" name="grid__input" id="fix-input" value="Фиксированная">
+                    <input type="radio" name="grid__input" id="fix-input" value="Фиксированная" class="grid__input">
+                    <span class="grid__button"></span>
                      Фиксированная
                 </label>
 
                 <label>
-                    <input type="radio" name="grid__input" id="rubber-input" value="Резиновая">
+                    <input type="radio" name="grid__input" id="rubber-input" value="Резиновая" class="grid__input">
+                    <span class="grid__button"></span>
                      Резиновая
                 </label>
             </fieldset>
 
             <fieldset class="filters__features">
-                <legend class="features__title">Особенности</legend>
+                <legend class="features__title">Особенности:</legend>
 
                 <label>
                     <input type="checkbox" checked>
+                    <span class="checkbox__img"></span>
                      Слайдер
                  </label>
 
                 <label>
                     <input type="checkbox">
+                    <span class="checkbox__img"></span>
                     Блок преимуществ
                 </label>
 
                 <label>
-                    <input type="checkbox" checked>
+                    <input type="checkbox" checked disabled>
+                    <span class="checkbox__img"></span>
                     Новости
                 </label>
                 <label>
                     <input type="checkbox">
+                    <span class="checkbox__img"></span>
                     Галерея
                 </label>
 
                 <label>
-                    <input type="checkbox">
+                    <input type="checkbox" disabled>
+                    <span class="checkbox__img"></span>
                     Корзина
                 </label>
             </fieldset>
@@ -91,7 +100,87 @@
             <input type="submit" value="Показать">
         </form>
     </section>
+    <main class="content container--narrow">
+        <nav class="content__sorting">
+            <h5 class="sorting__title">сортировать:</h5>
+            <ul class="sorting__filters">
+                <li class="item">
+                    <a href="#" class="filters__price">по цене</a>
+                </li>
 
-<script src="dist/main.js"></script>    
+                <li class="item">
+                    <a href="#" class="filters__type">по типу</a>
+                </li>
+                <li class="item">
+                    <a href="#" class="filters__name">по назваанию</a>
+                </li>
+            </ul>
+            <ul class="sorting__display">
+
+                <li class="item">
+                    <a href="#" class="display__up"><img src="" alt=""></a>
+                </li>
+
+                <li class="item">
+                    <a href="#" class="display__down"><img src="" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="content__products">
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-sedona.jpg" alt="" class="link__img">
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-pink.jpg" alt="" class="link__img">
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-barbershop.jpg" alt="" class="link__img">
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-mishka.jpg" alt="" class="link__img">
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-aplus.jpg" alt="" class="link__img">
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="#" class="item__link">
+                    <img src="../img/img-kvast.jpg" alt="" class="link__img">
+                </a>
+            </li>
+        </ul>
+        <nav class="pagination">
+            <ul class="pagination__list">
+                <li class="item">
+                    <a href="" class="item__link">1</a>
+                </li>
+
+                <li class="item">
+                    <a href="" class="item__link">2</a>
+                </li>
+
+                <li class="item">
+                    <a href="" class="item__link">3</a>
+                </li>
+            </ul>
+            <input type="button" value="следующая">
+        </nav>
+    </main>
+
+<script src="dist/main.js"></script>
 </body>
 </html>
