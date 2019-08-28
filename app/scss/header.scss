@@ -10,10 +10,11 @@
         .main-header__logo {
             margin-top: -15px;
             color: #000000;
-        }
 
-        .logo__main:hover {
-            color: #303030;
+            &:hover {
+                color: #303030; // SVG по другому работает, и его нужно подключать
+                // не как <img>, что бы с ним работать. Это попозже
+            }
         }
 
         .main-header__navigation {
@@ -30,7 +31,6 @@
                     text-decoration: none;
                     text-transform: uppercase;
                     color: #000000;
-
                 }
 
                 .item__link:hover {
@@ -59,8 +59,8 @@
                 content: url(../img/cart-icon.svg);
                 opacity: 0.5;
             }
-                /* не работает стилизация состояний */
-            .shopping-cart:hover {
+
+            &:hover { // Просто сконкатенировал через амперсанд как ты выше сделал бифор
                 color: #fb565a;
             }
         }
