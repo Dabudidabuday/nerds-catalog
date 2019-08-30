@@ -85,6 +85,7 @@
                         <span class="checkbox__img"></span>
                         Новости
                     </label>
+
                     <label>
                         <input type="checkbox">
                         <span class="checkbox__img"></span>
@@ -104,29 +105,28 @@
 
         <main class="content container--narrow">
             <nav class="content__sorting">
-                <h5 class="sorting__title">сортировать:</h5>
-                <ul class="sorting__filters">
-                    <li class="item">
-                        <a href="#" class="filters__price">по цене</a>
-                    </li>
+                <form action="#" method="get" class="sorting-form">
+                    <legend class="sorting-form__title">
+                        сортировать:
+                    </legend>
+                    <fieldset class="sorting-form__method">
+                        <label>
+                            <input type="radio" name="method__button">
+                            по цене
+                        </label>
 
-                    <li class="item">
-                        <a href="#" class="filters__type">по типу</a>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="filters__name">по назваанию</a>
-                    </li>
-                </ul>
+                        <label>
+                            <input type="radio" name="method__button">
+                            по типу
+                        </label>
 
-                <ul class="sorting__display">
-                    <li class="item">
-                        <a href="#" class="display__up"><img src="" alt=""></a>
-                    </li>
+                        <label>
+                            <input type="radio" name="method__button">
+                            по названию
+                        </label>
+                    </fieldset>
 
-                    <li class="item">
-                        <a href="#" class="display__down"><img src="" alt=""></a>
-                    </li>
-                </ul>
+                </form>
             </nav>
 
             <ul class="content__products">

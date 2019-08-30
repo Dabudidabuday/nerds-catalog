@@ -112,6 +112,7 @@ input[type=checkbox] {
     height: 23px;
     opacity: 0.4;
     background-image: url(../img/checkbox-off.svg);
+    background-repeat: no-repeat;
 }
 
 input[type=submit] {
@@ -125,18 +126,25 @@ input[type=submit] {
 }
 
 .content {
+
+
     .content__sorting {
         display: flex;
         margin-top: 58px;
         margin-bottom: 58px;
+        justify-content: space-between;
 
-        .sorting__title {
-            display: inline-block;
-        }
-
-        .sorting__filters {
+        .sorting {
             display: flex;
-            list-style: none;
+
+            .sorting__title {
+                display: inline-block;
+            }
+
+            .sorting__way {
+                border: none;
+                padding: 0;
+            }
         }
     }
 }
@@ -152,7 +160,9 @@ input[type=submit] {
     list-style: none;
 
     & > .item {
+
         .item__link {
+
             img {
                 border-radius: 10px;
             }
