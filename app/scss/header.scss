@@ -21,9 +21,15 @@
             width: 440px;
 
             .navigation__link-list {
+                position: sticky;
                 display: flex;
                 justify-content: space-between;
                 list-style: none;
+
+                .current {
+                    padding-bottom: 12px;
+                    border-bottom: 2px solid #fb565a;
+                }
 
                 .item__link {
                     line-height: 30px;
@@ -62,6 +68,10 @@
 
             &:hover { // Просто сконкатенировал через амперсанд как ты выше сделал бифор
                 color: #fb565a;
+            }
+
+            &:active {
+                color: #a6a6a6;
             }
         }
     }

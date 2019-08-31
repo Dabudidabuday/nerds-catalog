@@ -11,19 +11,21 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="www.nerds.ru" class="main-header__logo"><img src="../img/nerds-logo.svg" alt="Логотип студии Нёрдс" class="logo__main"></a>
+            <a href="../index/index.html" class="main-header__logo">
+                <img src="../img/nerds-logo.svg" alt="Логотип студии Нёрдс" class="logo__main">
+            </a>
             <nav class="main-header__navigation">
                 <ul class="navigation__link-list">
                     <li class="item">
-                        <a href="" class="item__link">студия</a>
+                        <a href="#" class="item__link">студия</a>
                     </li>
 
                     <li class="item">
-                        <a href="" class="item__link">клиенты</a>
+                        <a href="#" class="item__link">клиенты</a>
                     </li>
 
                     <li class="item">
-                        <a href="" class="item__link">магазин</a>
+                        <a href="#" class="item__link current">магазин</a>
                     </li>
 
                     <li class="item">
@@ -39,21 +41,47 @@
     <div class="main container">
         <aside class="filters">
             <form action="#" method="get" class="filters__form">
-                <fieldset class="form__cost">
+                <!-- ОРИГИНАЛ    <fieldset class="form__cost">
                     <legend class="cost__title">стоимость:</legend>
                     <input type="range" min="0" max="15000" step="1" value="7000">
+                </fieldset> -->
+                <fieldset class="filter-item">
+                    <legend>Стоимость:</legend>
+                    <div class="range-filter">
+                        <div class="range-controls">
+                            <div class="scale">
+                                <div class="bar"></div>
+                            </div>
+                            <div class="toggle toggle-min"></div>
+                            <div class="toggle toggle-max"></div>
+                        </div>
+                        <div class="price-controls">
+                            <label class="min-price">
+                                от
+                                <input name="min-price" type="text" value="0">
+                            </label>
+
+                            <label class="max-price">
+                                до
+                                <input name="max-price" type="text" value="15000">
+                            </label>
+                        </div>
+                    </div>
                 </fieldset>
+
 
                 <fieldset class="filters__grid">
                     <legend class="grid__title">cетка:</legend>
-                    <label>
-                        <input type="radio" name="grid__input" value="Адаптивная" class="grid__input">
+
+                    <label class="label">
+                        <input type="radio" name="grid__input" value="Адаптивная" class="grid__input" checked>
                         <span class="grid__button"></span>
                         Адаптивная
                     </label>
 
+
                     <label>
-                        <input type="radio" name="grid__input" id="fix-input" value="Фиксированная" class="grid__input">
+                        <input type="radio" name="grid__input"  value="Фиксированная" class="grid__input">
                         <span class="grid__button"></span>
                          Фиксированная
                     </label>
@@ -66,8 +94,9 @@
                 </fieldset>
 
                 <fieldset class="filters__features">
-                    <legend class="features__title">Особенности:</legend>
-
+                    <legend class="features__title">
+                        Особенности:
+                    </legend>
                     <label>
                         <input type="checkbox" checked>
                         <span class="checkbox__img"></span>
@@ -98,8 +127,7 @@
                         Корзина
                     </label>
                 </fieldset>
-
-                <input type="submit" value="Показать">
+                <input type="submit" value="Показать" class="form__button">
             </form>
         </aside>
 
@@ -111,21 +139,36 @@
                     </legend>
                     <fieldset class="sorting-form__method">
                         <label>
-                            <input type="radio" name="method__button">
+                            <input type="radio" name="method__button" class="method__button" checked>
                             по цене
                         </label>
 
                         <label>
-                            <input type="radio" name="method__button">
+                            <input type="radio"
+                            name="method__button"
+                            class="method__button">
                             по типу
                         </label>
 
                         <label>
-                            <input type="radio" name="method__button">
+                            <input type="radio"
+                            name="method__button"
+                            class="method__button">
                             по названию
                         </label>
                     </fieldset>
+                    <fieldset class="sorting-form__initially">
+                        <label for="initially-up">
+                            <img src="../img/icon-up-dir.svg" alt="">
+                        </label>
+                        <input type=radio name="initially" id="initially-up">
 
+                        <label for="initially-down">
+                            <img src="../img/icon-down-dir.png" alt="">
+                        </label>
+                        <input type=radio name="initially" id="initially-down">
+
+                    </fieldset>
                 </form>
             </nav>
 
@@ -180,11 +223,62 @@
                     <li class="item">
                         <a href="" class="item__link">3</a>
                     </li>
+
+                    <li class="item">
+                        <input type="button" value="следующая">
+                    </li>
                 </ul>
-                <input type="button" value="следующая">
             </nav>
         </main>
     </div>
+
+    <section class="map">
+        <img src="../img/map.jpg" alt="Санкт-Петербург, ул. Б. Конюшенная, д. 19/8" class="map__image">
+        <img src="../img/map-marker.png" alt="" class="map__image--marker">
+        <article class="map__address">
+            <h5>nёrds design studio</h5>
+            <br>
+            <p>
+                191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
+                <br>
+                <br>
+                тел. +7 (812) 275-75-75
+            </p>
+
+            <button type="button" class="experiment">Напишите нам</button>
+
+        </article>
+    </section>
+
+    <footer class="main-footer container">
+        <h3 class="visually-hidden">Студия в социальных сетях</h3>
+        <ul class="social">
+            <li class="social__item">
+                <a href="#" class="item__link">
+                    <span class="visually-hidden">Вконтакте</span>
+                    <img src="../img/vk-icon.svg" alt="">
+                </a>
+            </li>
+
+            <li class="social__item">
+                <a href="#" class="item__link">
+                    <span class="visually-hidden">Фейсбук</span>
+                    <img src="../img/fb-icon.svg" alt="">
+                </a>
+            </li>
+
+            <li class="social__item">
+                <a href="#" class="item__link">
+                    <span class="visually-hidden">Инстаграмм</span>
+                    <img src="../img/insta-icon.svg" alt="">
+                </a>
+            </li>
+        </ul>
+        <div class="call-to-action">
+            <h3>Давайте дружить, это выгодно!</h3>
+            <p>Скидка 10% для друзей из социальных сетей.
+        </div>
+    </footer>
 
 <script src="dist/main.js"></script>
 </body>

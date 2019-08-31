@@ -22,3 +22,8 @@
   clear: both;
   display: table;
 }
+
+.visually-hidden {
+    visibility: hidden;
+    position: absolute;
+}
