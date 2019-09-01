@@ -1,0 +1,531 @@
+@import 'normalize.scss';
+@import 'variables.scss';
+@import 'utilities.scss';
+@import 'framework.scss';
+
+@import 'header.scss';
+@import 'footer.scss';
+
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Фильтрация. Общая стилизация */
+
+.filters {
+    display: inline-block;
+
+
+    form {
+        display: flex;
+        margin: 0;
+        margin-top: 62px;
+        width: 260px;
+        justify-content: space-between;
+        flex-direction: column;
+
+        fieldset {
+            display: flex;
+            padding-bottom: 50px;
+            justify-content: space-between;
+            border: none;
+
+            legend {
+                padding-bottom: 20px;
+                font-size: 18px;
+                line-height: 30px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            label {
+                position: relative;
+                padding-bottom: 15px;
+                padding-left: 35px;
+                line-height: 20px;
+                color: #283136;
+
+                input {
+                    margin-right: 10px;
+
+                }
+            }
+        }
+    }
+}
+
+/* Range стоимости */
+
+
+/*  Оригинал .form-cost {
+
+    input {
+        background-color: #eeeeee;
+        padding: 28px 18px;
+    }
+}
+ */
+.filter-item {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    legend {
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .range-filter {
+        margin-top: 49px;
+        width: 260px;
+
+        .range-controls {
+            position: relative;
+            margin-bottom: 15px;
+            padding-top: 39px;
+            padding-right: 20px;
+            padding-left: 20px;
+            height: 41px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+
+            .toggle {
+                position: absolute;
+                top: 31px;
+                left: 0px;
+                width: 4px;
+                height: 4px;
+                padding: 0;
+                border: 8px solid #ffffff;
+                background-color: #ababab;
+                box-shadow: 0 2px 1px 0 #cfcfcf;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .toggle-min {
+                left: 18px;
+            }
+
+            .toggle-max {
+                left: 160px;
+            }
+
+
+            .scale {
+                height: 2px;
+                background: #d7dcde;
+
+                .bar {
+                    width: 70%;
+                    height: 2px;
+                    background: #00ca74;
+                }
+            }
+        }
+
+        .price-controls {
+            font-size: 0;
+
+            input {
+                width: 60px;
+                padding: 8px 10px;
+                margin-left: 10px;
+                font-family: Roboto, Arial, sans-serif;
+                font-size: 16px;
+                text-align: center;
+                color: #283136;
+                border: none;
+                border-radius: 5px;
+                background: #f1f1f1;
+            }
+
+            label {
+                display: inline-block;
+                width: 50%;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+
+            .max-price {
+                text-align: right;
+            }
+        }
+    }
+}
+
+/* Выбор сетки  */
+
+.grid__input:checked + .grid__button {
+    background-image: url(../img/radio-on.svg);
+}
+
+.grid__button {
+    position: absolute;
+    left: -1px;
+    top: -3px;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/radio-off.svg);
+    opacity: 0.4;
+}
+
+
+/* Выбор особенностей(чекбоксы) */
+
+input[type=checkbox] {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:checked {
+        & + .checkbox__img {
+            background-image: url(../img/checkbox-on.svg);
+        }
+    }
+
+    &:disabled {
+        & + .checkbox__img {
+            opacity: 0.1;
+        }
+    }
+}
+
+.checkbox__img {
+    position: absolute;
+    left: -1px;
+    width: 27px;
+    height: 23px;
+    opacity: 0.4;
+    background-image: url(../img/checkbox-off.svg);
+    background-repeat: no-repeat;
+}
+
+/* button "Показать". Фильтрация. */
+
+input[type=submit] {
+    margin-left: 12px;
+    padding: 19px 89px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #eeeeee;
+    border-radius: 5px;
+    border: none;
+    transition: .3s;
+    box-shadow: 0 0 2px 2px #eeeeee;
+    outline: none;
+}
+
+input[type=submit]:hover {
+    color: #ffffff;
+    background-color: #565555;
+    box-shadow: inset 0 0 5px 5px #ffffff,
+                0 10 5px 5px #e3e3e3;
+    transition: .3s;
+    font-weight: 900;
+
+}
+
+input[type=submit]:focus {
+    border: 2px dashed grey;
+}
+
+input[type=submit]:active {
+    color: #b7b7b7;
+    background-color: #d5d5d5;
+    box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.9)
+}
+
+
+/* Порядок отображения товаров */
+
+.content {
+
+    .content__sorting {
+        display: flex;
+        margin-top: 58px;
+        margin-bottom: 58px;
+        justify-content: space-between;
+
+        .sorting-form {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            .sorting-form__title {
+                display: inline-block;
+            }
+
+            .sorting-form__method {
+                border: none;
+                padding: 0;
+
+                label {
+                    opacity: 0.3;
+                    text-transform: uppercase;
+                }
+            }
+
+            .sorting-form__initially {
+                border: none;
+            }
+        }
+    }
+}
+
+/* Сетка товаров */
+
+.content__products {
+    display: flex;
+    padding: 0;
+    margin-bottom: 60px;
+    height: 1800px;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-basis: 360px;
+    flex-wrap: wrap;
+    list-style: none;
+
+    & > .item {
+
+        .item__link {
+
+            img {
+                border: 1px solid #eeeeee;
+                border-style: double;
+                border-radius: 10px 10px 0 0;
+                box-shadow: 0 0 10px 6px #dfdfdf;
+            }
+        }
+    }
+}
+
+/* Пагинация */
+
+.pagination {
+    margin-bottom: 58px;
+
+        .pagination__list {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: stretch;
+            list-style: none;
+
+            .item:not(:first-child) {
+                padding-left: 11px;
+            }
+
+            .item {
+                display: flex;
+
+                .item__link {
+                    padding: 15px 20px;
+                    line-height: 18px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    background-color: #eeeeee;
+                    border-radius: 2px;
+
+                }
+
+                .item__link:hover {
+                    background-color: #dfdfdf;
+                }
+
+                .item__link:active {
+                    padding: 12px 17px;
+                    background-color: #ffffff;
+                    color: #000000;
+                    border: 3px solid #eeeeee;
+                }
+
+                input[type=button] {
+                    padding: 17px 77px;
+                    font-family: 'Roboto', sans-serif;
+                    line-height: 18px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    background-color: #eeeeee;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+                input[type=button]:hover {
+                    background-color: #dfdfdf;
+                }
+
+                input[type=button]:active {
+                    color: #959595;
+                    background-color: #d5d5d5;
+                }
+        }
+    }
+}
+
+
+.map {
+    position: relative;
+
+    .map__image--marker {
+        position: absolute;
+        right: 390px;
+        bottom: 145px;
+        z-index: 2;
+    }
+}
+
+.map__address {
+    position: absolute;
+    left: 140px;
+    top: 50px;
+    padding: 50px;
+    display: flex;
+    width: 320px;
+    height: 305px;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #fff;
+    z-index: 2;
+
+    h5 {
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0;
+    }
+
+    p {
+        margin-top: -20px;
+    }
+/* оригинал
+    button {
+        padding: 17px 35px;
+        background-color: #fb565a;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #e74246;
+    }
+    button:active {
+        color: #e37376;
+        background-color: #d7373b;
+    }
+    */
+}
+
+    button {
+        position: relative;
+        display: block;
+        padding: 17px 35px;
+        background-color: transparent;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #fb565a;
+        border: 2px solid #fb565a;
+        border-radius: 5px;
+        transition: .5s;
+        overflow: hidden;
+        box-shadow: 0 0 5px 1px #9b9b9b;
+        outline: none;
+    }
+
+button::before,
+button::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #e74246;
+    top: 0;
+    left: -100%;
+    opacity: 0.5;
+    transition: .3s;
+    z-index: -1;
+}
+
+button::after {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+button:hover {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+button:hover::before,
+button:hover::after {
+    left: 0;
+}
+
+button:active {
+    box-shadow: inset 0 0 10px 1px rgba(10,10,10,0.9),
+                0 0 5px 1px #9b9b9b;
+}
+
+
+.main-footer {
+    display: flex;
+    margin-top: 68px;
+    margin-bottom: 68px;
+
+    .social {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 260px;
+        list-style: none;
+
+        .social__item {
+            margin-left: 11px;
+
+            .item__link {
+                display: flex;
+                justify-content: center;
+                width: 80px;
+                height: 80px;
+                background: #e1e1e1;
+                border-radius: 50%;
+            }
+
+            .item__link:hover {
+                background-color: #e74246;
+            }
+
+            .item__link:active {
+                color: #e37376;
+                background-color: #d7373b;
+            }
+        }
+    }
+
+    .call-to-action {
+        margin: 0 auto;
+
+        h3 {
+            margin: 0;
+            font-size: 36px;
+            line-height: 36px;
+        }
+
+        p {
+            line-height: 22px;
+            color: #444444;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.container {
+    margin: 0 auto;
+    width: 1160px;
+}
+
+.container--aside {
+    width: 260px;
+}
+
+.container--narrow {
+    width: 760px;
+    margin: 0;
+    margin-left: 140px;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.visually-hidden {
+    visibility: hidden;
+    position: absolute;
+}
